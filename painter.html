@@ -49,6 +49,30 @@ function checkPainter(){
     }
 }
 </script>
+<div>
+  <img id="plantImage" onclick="selectImage()" src="ulex.jpg" style="height: 100px; width: 100px;" alt="Ulex Plant">
+</div>
 
+<script>
+    useImage = 1;
+    function selectImage(){
+        switch(useImage){
+            case 1:
+                document.getElementById("plantImage").src="rose.jpg";
+                break;
+            case 2:
+                document.getElementById("plantImage").src="Abeliophyllum.jfif";
+                break;
+            case 3:
+                document.getElementById("plantImage").src="ulex.jpg";
+                break;
+        }
+        if(useImage < 3){
+            useImage++;
+        }else{
+            useImage = 1;
+        }
+    }
+</script>
 </body>
 </html> 
