@@ -20,6 +20,15 @@
     <input type="button" onclick="selectBox()" value="Select a box">
 </form>
 
+<form>
+    <label for="new_name">Enter the size</label>
+    <input type ="text" id="new_name" name="new_name" value="size"> <br>
+
+    <label for="new_name2">Enter Price</label>
+    <input type ="text" id="new_name2" name="new_name2"> <br>
+
+    <input type="button" onclick="updateBox(document.getElementById('new_name').value,document.getElementById('new_name2').value)" value="Update the box">
+</form>
 
 <p id="result"></p>
 
@@ -45,6 +54,13 @@ function selectBox(){
 
     document.getElementById("result").innerHTML = Object.values(my_candy_box);
 
+    my_candy_box = Object();
+}
+
+function updateBox(size, price){
+    my_candy_box.size = size;
+    my_candy_box.price = price;
+    document.getElementById("result").innerHTML = Object.values(my_candy_box);
     my_candy_box = Object();
 }
 </script>
