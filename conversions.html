@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Conversions</title>
+ </head>
+<body>
+<h1>Gabriel Mura Shows currency conversions</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_age">Enter base amount </label>
+    <input type ="number" id="form1_age" name="form1_age" value=50> <br>
+
+    <label for="form1_nick">Enter the conversion rate </label>
+    <input type ="number" id="form1_nick" name="form1_nick" value="35" autofocus> <br>
+
+    <input type="button" onclick="convert(document.getElementById('form1_age').value,document.getElementById('form1_nick').value)" value="Show conversions">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+
+function convert(baseValue, inputConversion){
+    toShow = ""
+    
+    for(i = 0; i < 5; i++){
+        toShow = toShow + baseValue*(2**i) + " is " + baseValue*(2**i)*inputConversion + "; ";
+    }
+    document.getElementById("result").innerHTML = "Conversions are " + toShow;
+}
+</script>
+
+</body>
+</html> 
