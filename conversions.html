@@ -23,13 +23,46 @@
 <script> 
 
 function convert(baseValue, inputConversion){
-    toShow = ""
+    toShow = "";
     
     for(i = 0; i < 5; i++){
         toShow = toShow + baseValue*(2**i) + " is " + baseValue*(2**i)*inputConversion + "; ";
     }
     document.getElementById("result").innerHTML = "Conversions are " + toShow;
 }
+</script>
+
+<form>
+    <input type="radio" onclick="chooseOp(document.getElementById('form1_age').value,document.getElementById('form1_nick').value)" id="mean" name="color" value="mean"   
+      checked >
+    <label for="mean">average</label></br>
+  
+    <input type="radio" onclick="chooseOp(document.getElementById('form1_age').value,document.getElementById('form1_nick').value)" id="max" name="color" value="maximum">
+    <label for="max">max</label></br>
+  
+    <input type="radio" onclick="chooseOp(document.getElementById('form1_age').value,document.getElementById('form1_nick').value)" id="min" name="color" value="minimum">
+    <label for="min">min</label></br>
+  </form>
+
+  <p id="tagged"></p>
+<script>
+    function chooseOp(baseValue, inputConversion){
+        if(document.getElementById('mean').checked){
+            document.getElementById('tagged').innerHTML=((+baseValue + +inputConversion)/2)
+        }else if(document.getElementById('max').checked){
+            if(baseValue < inputConversion){
+                document.getElementById('tagged').innerHTML=inputConversion
+            }else{
+                document.getElementById('tagged').innerHTML=baseValue
+            }
+        }else{
+            if(baseValue < inputConversion){
+                document.getElementById('tagged').innerHTML=baseValue
+            }else{
+                document.getElementById('tagged').innerHTML=inputConversion
+            }
+        }
+    }
 </script>
 
 </body>
