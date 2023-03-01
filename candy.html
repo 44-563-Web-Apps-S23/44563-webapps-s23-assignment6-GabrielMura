@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Candy</title>
+ </head>
+<body>
+<h1>Gabriel Mura chooses candy</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_age">Dark chocolate</label>
+    <input type ="checkbox" id="form1_age" name="form1_age" value="True"> <br>
+
+    <label for="form1_nick">Nuts</label>
+    <input type ="checkbox" id="form1_nick" name="form1_nick" value="True"> <br>
+
+    <label for="form2_age">Chewy</label>
+    <input type ="checkbox" id="form2_age" name="form2_age" value="False"> <br>
+
+    <input type="button" onclick="selectBox()" value="Select a box">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+my_candy_box = Object();
+
+function selectBox(){
+    if(document.getElementById('form1_age').checked){
+        my_candy_box.dark = true;
+    }else{
+        my_candy_box.dark = false;
+    }
+    if(document.getElementById('form1_nick').checked){
+        my_candy_box.nuts = true;
+    }else{
+        my_candy_box.nuts = false;
+    }
+    if(document.getElementById('form2_age').checked){
+        my_candy_box.chewey = true;
+    }else{
+        my_candy_box.chewey = false;
+    }
+
+    document.getElementById("result").innerHTML = Object.values(my_candy_box);
+
+    my_candy_box = Object();
+}
+</script>
+
+</body>
+</html> 
